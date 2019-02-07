@@ -18,18 +18,16 @@ dossier_md = args.input
 dossier_html = args.output
 dossier_temp = args.template
 
-# ouvre le fichier donné
-ouvrir_md = open(dossier_md, "r")
-
-# converti du md en html
-convert_html = markdown2.markdown(ouvrir_md.read())
-print(convert_html)
-
 # liste chaque fichier dans le dossier
 liste = os.listdir(dossier_md)
 
-# permet de lire le contenu de chaque fichier du dossier
-for fichier in liste:
-    with open(f'{dossier_md}/{fichier}', "r") as file:
-        toto = file.readlines()
-    print(toto)
+def convertir(dossier_md, dossier_html):
+    # permet de lire le contenu de chaque fichier du dossier
+    for fichier in liste:
+        with open(f'{dossier_md}/{fichier}', "r") as file:
+            for ligne in file:
+                convert_html = markdown2.markdown(file.read())
+                fichier_html = open(f'{dossier_html}/index.html', "w")
+            return fichier_html.write(convert_html)
+
+convertir(dossier_md, dossier_html)
