@@ -35,9 +35,3 @@ def convertir(dossier_md, dossier_html):
             compteur += 1
 
 convertir(dossier_md, dossier_html)
-
-def achtung():
-    print("ok")
-
-if allemand == True:
-    achtung()
