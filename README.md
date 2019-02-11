@@ -7,6 +7,7 @@
     + Les fichiers html créés grâce au programme se créeront dans le dossier 'fichiers_html'  
 
 ### Utilisation :  
++ Supprimez les fichiers dans les dossiers `fichiers_html`, `fichiers_allemand`, `fichiers_kikoo`  
 + Ouvrir un terminal de commande, et se placer dans le dossier ou se trouve le 'main.py'  
 + Utiliser la ligne de commande `py main.py -i ./fichiers_markdown -o ./fichiers_html` pour convertir les fichiers makdown en des fichiers html   
 `-i ./fichiers_markdown` étant le chemin du dossier où se trouvent tous les fichiers markdown à convertir.  

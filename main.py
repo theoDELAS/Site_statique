@@ -26,13 +26,13 @@ dossier_allemand = args.achtung
 dossier_temp = args.template
 
 # liste chaque fichier dans le dossier
-liste = os.listdir(dossier_md)
-
+liste_md = os.listdir(dossier_md)
 #fonction permettant de convertir le code markdown en html
+
 def convertir_html(dossier_md, dossier_html):
     compteur = 0
     # permet de lire le contenu de chaque fichier du dossier
-    for fichier in liste:
+    for fichier in liste_md:
         with open(f'{dossier_md}/{fichier}', "r") as file:
             convert_html = markdown2.markdown(file.read(), extras = ["link-patterns"] ,link_patterns = link_patterns)
             fichier_html = open(f'{dossier_html}/index{compteur}.html', "w")
@@ -40,7 +40,8 @@ def convertir_html(dossier_md, dossier_html):
             fichier_html.close()
             compteur += 1
 
-# liste des fiichiers dans le dossier html
+
+# liste des fichiers dans le dossier html
 liste_html = os.listdir(dossier_html)
 
 # Fonction pour convertir le code en un fichier plus lisible pour les allemands
